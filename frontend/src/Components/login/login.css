@@ -1,0 +1,8 @@
+.loginpage{
+        min-height: 100vh;
+        display: flex;
+        background-image: url("./bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+}

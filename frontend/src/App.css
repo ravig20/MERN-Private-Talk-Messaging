@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+body{
+  margin: 0%;
+  padding: 0%;
+  
+    overflow-y: scroll; 
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #563a3a0a;
+}
+      
+::-webkit-scrollbar-thumb:hover {
+  background: #8764640a;
+}
+      
+      
+      
+
+        
+
+      
+
+      
+
+   

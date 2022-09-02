@@ -1,0 +1,13 @@
+.forgotpage{
+    background: url("./bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.help{
+    background-image: linear-gradient(to right bottom, #7884e0, #798be2, #7a92e4, #7d99e5, #809fe6, #77a6e8, #6fade9, #6ab4e9, #5abce5, #55c3dd, #5cc8d3, #6ccdc7);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

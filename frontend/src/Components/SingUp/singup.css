@@ -1,0 +1,19 @@
+
+
+#pic{
+    border-radius: 30px;
+    margin: 1vmax;
+    padding-left: 15%;
+    padding-bottom: 0%;
+  
+  }
+  
+  #pic::-webkit-file-upload-button {
+    background-color: rgb(63, 76, 137);
+    color: white;
+    width: 100%;
+    padding: 0.5vmax;
+    border-radius: 30px;
+    border: none;
+    font: 100 1.2rem "Roboto", sans-serif;
+  }
