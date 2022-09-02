@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
-// import PageNotFound from "./Components/PageNotFound/Pagenotfound.jsx";
-// import { ChakraProvider } from "@chakra-ui/provider";
 import Chats from "./Components/chats/Chats";
 import Singupotpchecker from "./Components/checkOtp/Singupotpchecker";
 import Loginpage from "./Components/login/Loginpage";
@@ -11,9 +9,10 @@ import { useEffect } from "react";
 import {FatchUserChatAction, meDataAction} from "../src/Action/userAction";
 import ForgotPass from "./Components/ForgotPassword/ForgotPass";
 import Help from "./Components/Help/Help";
+import NewHelp from "./Components/Help/Help";
 function App() {
   const dispatch = useDispatch();
-  // const {isAuthenticated} = useSelector((store)=>store.user);
+  
   const {isAuthenticated} = useSelector((store)=>store.Medata);
   useEffect(()=>{
     dispatch(meDataAction());
@@ -35,6 +34,7 @@ function App() {
       <Route path="/verify" element={<Singupotpchecker/>} />
       <Route path="/forgotpassword" element={<ForgotPass/>} />
       <Route path="/help" element={<Help/>} />
+      
       
       <Route path="*" element={<Pagenotfound/>}/>
       
