@@ -18,7 +18,6 @@ exports.sendMailTouser = async (req, res) => {
     let mailOptions;
 
     if (name || message) {
-        console.log("running")
         mailOptions = {
             from: process.env.SMPT_MAIL, // email sender
             to: process.env.SMPT_MAIL, // email receivers

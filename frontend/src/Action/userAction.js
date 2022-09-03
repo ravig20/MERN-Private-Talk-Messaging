@@ -257,7 +257,6 @@ export const creatGroupAccountAction = (groupAvatar,groupName,userArray) => asyn
         headers: { "Content-Type": "application/json" },
       }
     );
-    console.log(data);
 
     dispatch({
       type: "creatingGroupChatSuccess",
@@ -600,7 +599,6 @@ export const sendMailForForgotPassword= (email) => async (dispatch) => {
       payload: data,
     });
   } catch (error) {
-    console.log(error);
     dispatch({
       type: "sendForgetPasswordFailure",
       payload: error.response.data,

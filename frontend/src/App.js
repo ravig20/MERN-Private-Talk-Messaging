@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import {FatchUserChatAction, meDataAction} from "../src/Action/userAction";
 import ForgotPass from "./Components/ForgotPassword/ForgotPass";
 import Help from "./Components/Help/Help";
-import NewHelp from "./Components/Help/Help";
+
 function App() {
   const dispatch = useDispatch();
   

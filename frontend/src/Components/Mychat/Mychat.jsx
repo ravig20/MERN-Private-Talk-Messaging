@@ -69,7 +69,7 @@ const Mychat = () => {
 
 
   function removeHandlerArray(user) {
-    setuserGroupArray(userGroupArray.filter(userid => userid._id !== user._id));
+    setuserGroupArray(userGroupArray.filter(userid => userid?._id !== user?._id));
   }
 
 
@@ -206,48 +206,48 @@ const Mychat = () => {
         px={3}
         py={2}
         borderRadius="lg"
-        key={chat._id}
+        key={chat?._id}
       >
         <Box display="flex" alignItems="center" px={1}>
-          {chat.isGroupChat ? (
+          {chat?.isGroupChat ? (
             <Avatar
               size="sm"
               name={chat?.chatName}
               src={chat?.groupPic?.url}
             />
-          ) : meinfo?.data?._id === chat.users[0]._id ? (
+          ) : meinfo?.data?._id === chat?.users[0]?._id ? (
             <Avatar
               size="sm"
-              name={chat?.users[1].name}
-              src={chat?.users[1].pic.url}
+              name={chat?.users[1]?.name}
+              src={chat?.users[1]?.pic?.url}
             />
           ) : (
             <Avatar
               size="sm"
-              name={chat?.users[0].name}
-              src={chat?.users[0].pic.url}
+              name={chat?.users[0]?.name}
+              src={chat?.users[0]?.pic?.url}
             />
           )}
           <Box display="flex" flexDir="column">
             <Text fontFamily="Segoe UI" paddingLeft="10px">
               {/* isowner */}
-              {chat.isGroupChat
+              {chat?.isGroupChat
                 ? chat?.chatName
-                : meinfo?.data?._id === chat.users[0]._id
-                  ? chat?.users[1].name
-                  : chat?.users[0].name
+                : meinfo?.data?._id === chat?.users[0]?._id
+                  ? chat?.users[1]?.name
+                  : chat?.users[0]?.name
               }
 
               {
-                chat.isGroupChat
+                chat?.isGroupChat
                   ? (<></>)
                   : 
-                  (meinfo?.data?._id === chat.users[0]._id
-                    ? (chat?.users[1].isStar ? (<Badge bg={"38B2AC"}>
+                  (meinfo?.data?._id === chat?.users[0]?._id
+                    ? (chat?.users[1]?.isStar ? (<Badge bg={"38B2AC"}>
                       <Icon as={MdVerified} w={3} h={3} color="#405DE6" />
                     </Badge>) : (<></>))
                     : 
-                    (chat?.users[0].isStar ?
+                    (chat?.users[0]?.isStar ?
                      (<Badge bg={"38B2AC"}>
                       <Icon as={MdVerified} w={3} h={3} color="#405DE6" />
                     </Badge>)
@@ -256,12 +256,12 @@ const Mychat = () => {
 
 
 
-              { chat.isStar?<Badge bg={"38B2AC"}>
+              { chat?.isStar?<Badge bg={"38B2AC"}>
              <Icon as={MdVerified} w={3} h={3}  color="#405DE6"/>
               </Badge>:<></>}
             </Text>
             <Text fontFamily="Segoe UI" fontSize={"xs"} paddingLeft="10px">
-              {chat.latestMessage ? reduceChatHandler(chat.latestMessage.content) : <> </>}
+              {chat?.latestMessage ? reduceChatHandler(chat?.latestMessage?.content) : <> </>}
             </Text>
           </Box>
 
@@ -325,7 +325,8 @@ const Mychat = () => {
         {fatchUserData ? (
           <Stack overflowY="scroll">
 
-            {fatchUserData?.result.map((chat) => (
+            {fatchUserData?.result?.map((chat) => (
+              
               showUsers(chat)
             ))}
           </Stack>
@@ -411,7 +412,7 @@ const Mychat = () => {
               {
                 userGroupArray?.map((user) => (
                   <UserBadgeIte
-                    key={user._id}
+                    key={user?._id}
                     user={user}
                     removeHandler={() => removeHandlerArray(user)}
                   />
@@ -421,11 +422,11 @@ const Mychat = () => {
 
             <Stack overflowY="scroll" mt={1} >
               {searchLoding ? <SearchingLoder /> : (
-                searchUser?.searchUsers?.slice(0, 3).map((user) => (
+                searchUser?.searchUsers?.slice(0, 3)?.map((user) => (
                   <SearchUser
                     user={user}
                     useingGroup={true}
-                    key={user._id}
+                    key={user?._id}
                     selecteHandler={() => creatingArray(user)}
                   />
                 ))

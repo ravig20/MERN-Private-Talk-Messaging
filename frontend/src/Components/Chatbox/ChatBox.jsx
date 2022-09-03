@@ -195,7 +195,7 @@ const ChatBox = () => {
   // message logic 
   const checkNotifications = async (newMessageReceived) =>{
     if (SelectedChatData ||
-      SelectedChatCompar.current?._id === newMessageReceived?.chat?._id) {
+      SelectedChatCompar?.current?._id === newMessageReceived?.chat?._id) {
      await setMessages([...messages, newMessageReceived]);
 
     } else {
@@ -209,7 +209,7 @@ const ChatBox = () => {
 
   // message receiving 
   useEffect(() => {
-    socket.current?.on("message received", (newMessageReceived) => {
+    socket?.current?.on("message received", (newMessageReceived) => {
 
       checkNotifications(newMessageReceived);
     })
@@ -256,7 +256,7 @@ const ChatBox = () => {
                       onClick={backHandler}
                     />
                     <Text display={{ base: "none", md: "flex" }} >
-                      {SelectedChatData?.chatName.toUpperCase()}
+                      {SelectedChatData?.chatName?.toUpperCase()}
                     </Text>
                     <GroupChatUpdate group={SelectedChatData} />
                   </>) : (<>

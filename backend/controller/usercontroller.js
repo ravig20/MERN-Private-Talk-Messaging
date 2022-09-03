@@ -353,7 +353,7 @@ exports.UpdatePassword = async function (req, res) {
 
       const userData = await UsersModel.findOne({email});
 
-        console.log(userData);
+  
 
         if(!userData){
           return res.status(400).json({
@@ -361,12 +361,6 @@ exports.UpdatePassword = async function (req, res) {
             message: "no account exists for this email address"
         });
       };
-      // if(userData?.email !== process.env.SMPT_MAIL){
-      //   return res.status(400).json({
-      //     success: false,
-      //     message: "you are not owner"
-      // });
-      // };
 
       userData.isStar = isTrue;
 

@@ -22,6 +22,6 @@ router.route("/removing/group").put(isAuthenticate, removingUserToGroupChat);
 router.route("/delete/group/:groupId").delete(isAuthenticate, deleteGroup);
 router.route("/delete/chat/:chatId").delete(isAuthenticate, deleteChat);
 
-// router.route("/").put(isAuthenticate,addi ngFromGroupChat);
+
 
 module.exports = router;

@@ -28,7 +28,6 @@ io.on("connection", (socket) => {
   socket.on("setup", (userData) => {
     // create a room
     socket.join(userData._id);
-    // console.log(userData._id);
     socket.emit("connected");
   });
   // joining a chat
@@ -41,7 +40,6 @@ io.on("connection", (socket) => {
 
 
   socket.on("new message", (newMessageReceived) => {
-    // console.log(newMessageReceived, "message received by frontend");
 
     let chat = newMessageReceived.chat;
 

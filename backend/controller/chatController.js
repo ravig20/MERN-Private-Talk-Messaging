@@ -301,7 +301,7 @@ exports.deleteChat = async (req, res) => {
         message: "chat account not found "
       });
     }
-    console.log(chatData, req.params.chatId);
+   
     const Allmessage = await MessageModel.find({ chat: req.params.chatId });
     if(!Allmessage){
       return res.status(400).json({

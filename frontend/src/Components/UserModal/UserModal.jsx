@@ -51,7 +51,6 @@ const UserModal = ({ user, children, myAccount = false }) => {
   const [star, setStar] = useState(false)
   const [loading, setloading] = useState(false);
 
-
   // edit profile state
   const [name, setname] = useState("")
   const [userAvatar, setUserAvatar] = useState("")
@@ -62,9 +61,6 @@ const UserModal = ({ user, children, myAccount = false }) => {
   const [oldpassword, setoldpassword] = useState("")
   const [Newpassword, setNewoldpassword] = useState("")
   const [Confirmpassword, setConfirmpassword] = useState("")
-
-
-
 
   // set celebrity
   const [emailId, setemailId] = useState("");
@@ -108,7 +104,6 @@ const UserModal = ({ user, children, myAccount = false }) => {
 
   // creat star
   const createAstar = async () => {
-    console.log(emailId);
     dispatch(creatStar(emailId,true));
     setStar(false);
   };
@@ -307,7 +302,6 @@ const UserModal = ({ user, children, myAccount = false }) => {
                 <Button
                   isDisabled={user?.isowner}
                   colorScheme="purple"
-                  // loadingText="singUp"
                   width="100%"
                   style={{ marginTop: 15 }}
                   rightIcon={<Icon as={CgPassword} w={5} h={5} />}
@@ -319,13 +313,11 @@ const UserModal = ({ user, children, myAccount = false }) => {
                 <Link to="/help">
                 
                 <Button
-                  isDisabled={user?.isowner}
+                  // isDisabled={user?.isowner}
                   colorScheme="facebook"
-                  // loadingText="singUp"
                   width="100%"
                   style={{ marginTop: 15 }}
                   rightIcon={<Icon as={GiHelp} w={5} h={5} />}
-                // onClick={() => SetopenModal(true)}
                 >
                   Help
                 </Button>
@@ -344,13 +336,8 @@ const UserModal = ({ user, children, myAccount = false }) => {
                 Logout
               </Button>
 
-
-
-
               {user?.email === "ravibaba2022@gmail.com" ? <Button
                 colorScheme="red"
-                // isDisabled={!user?.isowner}
-                // isLoading={deleting}
                 loadingText='deleting'
                 width="100%"
                 style={{ marginTop: 15 }}

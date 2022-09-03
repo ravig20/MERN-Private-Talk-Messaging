@@ -18,7 +18,6 @@ const SetForgotPassword = ({email}) => {
     const [password, setpassword] = useState("");
     const [cpassword, setcpassword] = useState("");
     const submitHandler = async () => {
-        console.log(otpSendEmail,password,cpassword,otp);
         if (!otp || !password || !cpassword) {
             toast({
               title: ` required all fields`,
